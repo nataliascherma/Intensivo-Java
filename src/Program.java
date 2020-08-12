@@ -1,13 +1,18 @@
 public class Program {
-            public static void main(String[] args) {
+    public static void main(String[] args) {
 
-            Veiculo carro = new Veiculo();
-            carro.passageiros = 5;
-            carro.combustivel = 50.0;
-            carro.consumo = 10.0;
+        Conta conta = new Conta(100,"Alex",1000.0);
+        conta.saque(200.0);
+        System.out.println(conta.getSaldo());
 
-            System.out.println("Autonomia: " + carro.autonomia());
-            System.out.println("Combustível necessário: " + carro.calculaCombustivel(200.0));
-        }
+        // upcasting
+        Conta conta2 = new ContaPoupanca(101, "Maria",1000.0,0.01);
+        conta2.saque(200.0);
+        System.out.println(conta2.getSaldo());
+
+        Conta conta3 = new ContaEmpresa(102,"Bob",1000.0,500.0);
+        conta3.saque(200.0);
+        System.out.println(conta3.getSaldo());
     }
+}
 
